@@ -37,8 +37,8 @@ class MyHomePage extends StatelessWidget {
           title: Text('Flutter App'),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
               width: double.infinity,
@@ -51,6 +51,21 @@ class MyHomePage extends StatelessWidget {
                 elevation: 5,
               ),
             ),
+
+            Card(
+              elevation: 5,
+
+              child: Container(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                children: <Widget>[
+                  TextField(decoration: InputDecoration(labelText: 'Title'),),
+                  TextField(decoration: InputDecoration(labelText: 'Amount'),),
+
+                  FlatButton(child: Text('Add Tranaction'), color: Colors.purple,onPressed: () {},)
+                ],
+            ),
+              ),),
             Column(
               children: transactions.map((tx) {
                 return Card(
@@ -79,7 +94,7 @@ class MyHomePage extends StatelessWidget {
                             style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),
                         ),
                         Text(
-                          DateFormat().format(tx.date),
+                          DateFormat.yMMMd().format(tx.date),
                         style: TextStyle(fontSize: 10, color: Colors.grey),),
                       ],
                     )
