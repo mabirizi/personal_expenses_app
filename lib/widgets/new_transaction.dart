@@ -18,16 +18,10 @@ class NewTransaction extends StatelessWidget {
             TextField(
               decoration: InputDecoration(labelText: 'Title'),
               controller: titleController,
-              // onChanged: (val) {
-              //   titleInput = val;
-              // },
             ),
             TextField(
               decoration: InputDecoration(labelText: 'Amount'),
               controller: amountController,
-              //  onChanged: (val) {
-              //     amountInput = val;
-              //   },
             ),
             FlatButton(
               child: Text('Add Tranaction'),
