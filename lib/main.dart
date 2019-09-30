@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
 
-  final List<Transaction> transaction = [
+  final List<Transaction> transactions = [
     Transaction(
       id: 't1',
       title: 'New Shoes',
@@ -39,6 +39,8 @@ class MyHomePage extends StatelessWidget {
           title: Text('Flutter App'),
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
               width: double.infinity,
@@ -52,9 +54,11 @@ class MyHomePage extends StatelessWidget {
                 elevation: 5,
               ),
             ),
-            Card(
-              child: Text('List of TX'),
-            ),
+            Column(
+              children: transactions.map((tx) {
+                return Card(child: Text(tx.title),);
+              }).toList(),
+            )
           ],
         ));
   }
