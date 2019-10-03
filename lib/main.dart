@@ -1,3 +1,5 @@
+import 'package:flutter/services.dart';
+
 import './widgets/chart.dart';
 
 import './widgets/transaction_list.dart';
@@ -7,7 +9,14 @@ import './models/transaction.dart';
 
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
